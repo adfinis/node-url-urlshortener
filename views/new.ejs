@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create new Short URL</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/urlshortener.js"></script>
+  </head>
+  <body>
+
+    <div class="ok-msg-container">
+      <div class="flex-item" id="ok-msg">
+        <h2>URL created</h2>
+        <input id="shorturl">
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <h1>Create new Short URL</h1>
+
+        <h2>Source URL</h2>
+        <input class="sourceurl" id="inp-url">
+        <div id="inp-url-error">ERROR: please enter a valid URL</div>
+
+        <h2>Alias (optional)</h2>
+        <input class="alias" id="inp-alias">
+        <div id="inp-alias-error">ERROR: alias allready taken</div>
+
+        <h2>Expiration date (optional)</h2>
+        <input class="expdate" type="date" id="inp-exp">
+
+        <br><br><br>
+        <span class="button" id="btn-create">Create</span>
+
+
+      </div>
+    </div>
+  </body>
+</html>
