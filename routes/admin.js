@@ -3,10 +3,11 @@ var router = express.Router();
 var db = require('../db');
 var uuid = require('../uuid');
 
-/* GET url listing. */
+/* UI Page overview listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('admin')
 });
+
 
 /* new url page */
 router.get('/new', function(req, res, next) {
@@ -14,8 +15,7 @@ router.get('/new', function(req, res, next) {
 });
 
 
-
-/* check if alias allready exists */
+/* check if alias/ID allready exists */
 router.get('/api/check/*', function(req, res, next) {
   var str_to_check = req.originalUrl.split("/")[4];
   var id_to_check  = uuid.decode(str_to_check);
@@ -32,7 +32,7 @@ router.get('/api/check/*', function(req, res, next) {
 });
 
 
-/* new url api */
+/* Create a new URL */
 router.post('/api/new', function(req, res, next) {
   new db({
     url: req.body.url,
@@ -46,8 +46,31 @@ router.post('/api/new', function(req, res, next) {
 });
 
 
+
+router.get("/api/list", function(req, res, next ){
+  db.fetchAll().then(function(data){
+    var resp = []
+    var raw = data.toJSON();
+    for (item of raw){
+      item.uuid = uuid.encode(item.id);
+      resp.push(item);
+    }
+    res.json(resp);
+  });
+});
+
+
+/* delete an URL */
 router.post('/api/delete', function(req, res, next) {
-  res.render('new');
+  db.where('id', req.body.item_id).fetch().then(function(item){
+    if (item){
+      item.destroy();
+      res.json({ 'status': 'ok' });
+    }
+    else {
+      res.json({ 'status': 'notfound' });
+    }
+  });
 });
 
 

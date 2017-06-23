@@ -39,6 +39,7 @@ span.button {
   display: inline-block;
   width: 80px;
   cursor: pointer;
+  color: rgb(0,0,0);
 }
 
 /* error page */
@@ -97,4 +98,66 @@ input.expdate {
 
 select.redirtype {
     font: 18px "TheSansOffice", Helvetica, Arial, sans-serif;
+}
+
+/* admin page */
+
+h1.overview {
+  padding-left: 50px;
+}
+
+div.url-list-container {
+  padding: 50px;
+  padding-top: 5px;
+}
+
+div.url-list-item {
+  width: 80%;
+  display: flex;
+  border: 1px solid gray;
+  border-top: none;
+  padding: 5px;
+}
+
+div.url-list-item:nth-child(even) {
+  background-color: rgb(244, 251, 255);
+}
+
+div.url-list-item:hover {
+  background-color: rgb(222, 243, 255);
+}
+
+div.url-list-item.url-list-header {
+  border-top: 1px solid gray;
+  font-weight: bold;
+  background-color: rgb(255,255,255);
+}
+
+div.url-list-item div.id {
+  width: 5%;
+}
+
+div.url-list-item div.short {
+  width: 15%;
+}
+
+div.url-list-item div.alias {
+  width: 10%;
+}
+
+div.url-list-item div.dest {
+  width: 35%;
+}
+
+div.url-list-item div.exp-date {
+  width: 15%;
+}
+
+div.url-list-item div.visit-count {
+  width: 10%;
+}
+
+span.item-delete {
+  cursor: pointer;
+  color: #00B7FF;
 }

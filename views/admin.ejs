@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/urlshortener-admin.js"></script>
+    <script src="/js/ejs.min.js"></script>
+  </head>
+  <body>
+
+    <h1 class="overview">Short URL overview</h1>
+
+    <div class="url-list-container">
+
+
+      <div class="url-list-item url-list-header">
+        <div class="id">ID</div>
+        <div class="short">Short</div>
+        <div class="alias">Alias</div>
+        <div class="dest">Destination</div>
+        <div class="exp-date">Exp Date</div>
+        <div class="visit-count"># Visits</div>
+        <div class="actions"></div>
+      </div>
+
+      <div id="itemlist"></div>
+
+      <br><br>
+      <a href="/admin/new">
+        <span class="button" id="btn-create">New URL</span>
+      </a>
+
+    </div>
+
+
+    <!-- this template is used client-side !-->
+     <script id="item-tpl-listitem" type="text/template">
+       <%% items.forEach(function(item){ %%>
+        <div class="url-list-item">
+          <div class="id"><%%= item.id %%></div>
+          <div class="short">
+            <a href="<%%= urlbase %%><%%= item.short %%><%%= item.uuid %%>" target="_blank">
+              <%%= urlbase %%><%%= item.short %%><%%= item.uuid %%>
+            </a>
+          </div>
+          <div class="alias">
+            <a href="<%%= urlbase %%><%%= item.alias %%>" target="_blank">
+              <%%= item.alias %%>
+            </a>
+          </div>
+          <div class="dest">
+            <a href="<%%= item.url %%>" target="_blank">
+              <%%= item.url %%>
+            </a>
+          </div>
+          <div class="exp-date"><%%= item.exp_date %%></div>
+          <div class="visit-count"><%%= item.visit_count %%></div>
+          <div class="actions"> <span class="item-delete">[delete]</span></div>
+        </div>
+      <%% })  %%>
+    </script>
+
+
+
+  </body>
+</html>

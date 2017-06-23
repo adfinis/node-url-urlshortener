@@ -24,6 +24,10 @@ router.get('/', function(req, res, next) {
         'Cache-Control': 'no-cache'
       });
       res.end();
+
+      // update visit_count value
+      url.set("visit_count", obj.visit_count+1 ).save();
+
     }
     else {
       res.render('index');
