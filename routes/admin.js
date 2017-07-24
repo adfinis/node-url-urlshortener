@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 var uuid = require('../uuid');
+var moment = require('moment')
 
 /* UI Page overview listing. */
 router.get('/', function(req, res, next) {
@@ -34,15 +35,27 @@ router.get('/api/check/*', function(req, res, next) {
 
 /* Create a new URL */
 router.post('/api/new', function(req, res, next) {
+
+  try {
+    var mstr = req.body.exp_date + " 23:59"
+    var exp_date = moment(mstr, moment.ISO_8601);
+    var exp_datetime = exp_date.toISOString();
+  }
+  catch(err) {
+    var exp_datetime=null;
+  }
+
   new db({
     url: req.body.url,
     alias: req.body.alias,
-    visit_count: 0
+    visit_count: 0,
+    exp_date: exp_datetime
   }).save().then(function(url) {
     var resp = url.toJSON();
     resp.uuid = uuid.encode(resp.id)
     res.json(resp);
   })
+
 });
 
 

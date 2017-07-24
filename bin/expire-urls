@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var app = require('../expire-urls');
+var moment = require('moment')
+
+
+app()
