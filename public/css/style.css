@@ -39,7 +39,7 @@ span.button {
   display: inline-block;
   width: 80px;
   cursor: pointer;
-  color: rgb(0,0,0);
+  color: rgb(255, 255, 255);
 }
 
 /* error page */
@@ -112,9 +112,9 @@ div.url-list-container {
 }
 
 div.url-list-item {
-  width: 80%;
+  width: 90%;
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid rgb(222, 222, 222);
   border-top: none;
   padding: 5px;
 }
@@ -128,7 +128,7 @@ div.url-list-item:hover {
 }
 
 div.url-list-item.url-list-header {
-  border-top: 1px solid gray;
+  border-top: 1px solid rgb(222, 222, 222);
   font-weight: bold;
   background-color: rgb(255,255,255);
 }

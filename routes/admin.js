@@ -65,6 +65,12 @@ router.get("/api/list", function(req, res, next ){
     var resp = []
     var raw = data.toJSON();
     for (item of raw){
+      var item_exp_date = "never"
+      var exp_date_moment = moment(item.exp_date);
+      if (exp_date_moment.unix()>0){
+        item_exp_date = exp_date_moment.format("DD.MM.YYYY");
+      }
+      item.exp_date = item_exp_date;
       item.uuid = uuid.encode(item.id);
       resp.push(item);
     }
