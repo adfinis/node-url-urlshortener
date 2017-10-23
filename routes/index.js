@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
     }
     else {
-      res.render('index');
+      res.status(404).render('index');
     }
   })
 
