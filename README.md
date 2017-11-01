@@ -1,34 +1,22 @@
-# Effing package manager docker
+# Adfinis URLShortener
 
-GitLab CI optimized Docker image for FPM
+Simple node app for an url shortener service
 
-## Pulling
+## Installation
 
-This image is on Docker Hub, you can pull it like this:
 ```
-# docker pull adfinissygroup/effing-package-manager:latest
+# adduser urlshortener
+# git clone git@github.com/adfinis-sygroup/node-url-urlshortener /var/www/urlshortener
+# chown urlshortener:urlshortener /var/www/urlshortener/
+# cd /var/www/urlshortener
+# mysql urlshortener < db/create.sql
+# vim db.js # <- adjust username and password
+# su - urlshortener
+$ cd /var/www/urlshortener
+$ npm install
+$ pm2 start --name=urlshortener npm -- start
 ```
 
 ## Usage
 
-This image is optimized to be used by the GitLab runners, but you can
-use it standalone as well:
-
-```
-# docker run -it adfinissygroup/effing-package-manager:latest bash
-# fpm --help
-```
-
-For FPM Usage please look at: https://github.com/jordansissel/fpm/wiki
-
-## Building
-
-Build the image:
-```
-# make image
-```
-
-Push it to Docker Hub:
-```
-# make push
-```
+Pretty self-explaining, go to yoururl.tld/admin for creating an new URL.
