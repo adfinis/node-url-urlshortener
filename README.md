@@ -1,6 +1,13 @@
 # Adfinis URLShortener
 
-Simple node app for an url shortener service
+Simple node app for an url shortener service.
+It creates URL's like https://ad-sy.ch/b
+
+## Screenshots
+
+![](./doc/screenshot-404.png | width=250)
+![](./doc/screenshot-admin.png | width=250)
+![](./doc/screenshot-newurl.png | width=250)
 
 ## Installation
 
