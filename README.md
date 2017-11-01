@@ -5,9 +5,9 @@ It creates URL's like https://ad-sy.ch/b
 
 ## Screenshots
 
-<a href="./doc/screenshot-404.png"><img src="./doc/screenshot-404.png" height="200" ></a>
-<a href="./doc/screenshot-admin.png"><img src="./doc/screenshot-admin.png" height="200" ></a>
-<a href="./doc/screenshot-newurl.png"><img src="./doc/screenshot-newurl.png" height="200" ></a>
+<a href="./doc/screenshot-404.png"><img src="./doc/screenshot-404.png" height="150" ></a>
+<a href="./doc/screenshot-admin.png"><img src="./doc/screenshot-admin.png" height="150" ></a>
+<a href="./doc/screenshot-newurl.png"><img src="./doc/screenshot-newurl.png" height="150" ></a>
 
 ## Installation
 
