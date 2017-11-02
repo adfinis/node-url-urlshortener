@@ -1,4 +1,4 @@
-# Adfinis URLShortener
+# URLShortener
 
 Simple node app for an URL shortener service.
 It creates URLs like https://ad-sy.ch/b
@@ -26,4 +26,4 @@ $ pm2 start --name=urlshortener npm -- start
 
 ## Usage
 
-Pretty self-explaining, go to yoururl.tld/admin for creating an new URL.
+Pretty self-explanatory, go to yoururl.tld/admin for creating a new URL.
