@@ -1,0 +1,1 @@
+ALTER TABLE urlshortener MODIFY COLUMN exp_date DATE;
