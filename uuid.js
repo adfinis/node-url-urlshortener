@@ -1,8 +1,9 @@
 var alphabet, base, i, j;
 
-alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split(
+  ""
+);
 base = alphabet.length;
-
 
 exports.encode = function(i) {
   var s;
@@ -14,7 +15,10 @@ exports.encode = function(i) {
     s += alphabet[i % base];
     i = parseInt(i / base, 10);
   }
-  return s.split("").reverse().join("");
+  return s
+    .split("")
+    .reverse()
+    .join("");
 };
 
 exports.decode = function(s) {
