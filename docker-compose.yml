@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: '123qwe'
+      MYSQL_DATABASE: 'urlshortener'
+      MYSQL_USER: 'urlshortener'
+      MYSQL_PASSWORD: 'urlshortener'
+
+  web:
+    image: node:8
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn watch
