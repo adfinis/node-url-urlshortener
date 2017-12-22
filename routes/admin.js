@@ -35,17 +35,16 @@ router.get("/api/check/*", function(req, res, next) {
 router.post("/api/new", function(req, res, next) {
   try {
     var mstr = req.body.exp_date + " 23:59";
-    var exp_date = moment(mstr, moment.ISO_8601);
-    var exp_datetime = exp_date.toISOString();
+    var exp_date = moment(mstr, moment.ISO_8601).format("YYYY-MM-DD");
   } catch (err) {
-    var exp_datetime = null;
+    var exp_date = null;
   }
 
   new db({
     url: req.body.url,
     alias: req.body.alias,
     visit_count: 0,
-    exp_date: exp_datetime
+    exp_date: exp_date
   })
     .save()
     .then(function(url) {

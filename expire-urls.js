@@ -8,7 +8,7 @@ var expire_urls = function() {
     var del_ids = [];
 
     for (item of rows) {
-      var exp_date = moment.utc(item.exp_date);
+      var exp_date = moment(item.exp_date, "YYYY-MM-DD");
       // null in database
       if (exp_date.unix() == 0) {
         continue;
