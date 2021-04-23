@@ -33,10 +33,10 @@ router.get("/api/check/*", function(req, res, next) {
 
 /* Create a new URL */
 router.post("/api/new", function(req, res, next) {
-  try {
+  if (req.body.exp_date) {
     var mstr = req.body.exp_date + " 23:59";
     var exp_date = moment(mstr, moment.ISO_8601).format("YYYY-MM-DD");
-  } catch (err) {
+  } else {
     var exp_date = null;
   }
 
