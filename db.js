@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const knex = require('knex')({
-	client: 'mysql',
+	client: process.env.DATABASE || "mysql",
 	connection: {
 		host: process.env.DATABASE_HOST || "db",
 		user: process.env.DATABASE_USER || "urlshortener",
