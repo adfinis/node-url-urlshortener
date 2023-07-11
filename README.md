@@ -13,7 +13,7 @@ It creates URLs like https://ad-sy.ch/b
 
 ```
 # adduser urlshortener
-# git clone git@github.com/adfinis-sygroup/node-url-urlshortener /var/www/urlshortener
+# git clone git@github.com/adfinis/node-url-urlshortener /var/www/urlshortener
 # chown urlshortener:urlshortener /var/www/urlshortener/
 # cd /var/www/urlshortener
 # mysql urlshortener < db/create.sql

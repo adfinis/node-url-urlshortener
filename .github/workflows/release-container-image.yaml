@@ -24,7 +24,7 @@ jobs:
       - name: Prepare Image Metadata
         id: prep
         run: |
-          DOCKER_IMAGE=ghcr.io/adfinis-sygroup/urlshortener
+          DOCKER_IMAGE=ghcr.io/adfinis/urlshortener
           VERSION=noop
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
