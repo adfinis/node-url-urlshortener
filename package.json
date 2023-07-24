@@ -8,7 +8,7 @@
     "expire": "node ./bin/expire-urls"
   },
   "dependencies": {
-    "body-parser": "~1.19.0",
+    "body-parser": "~1.20.2",
     "bookshelf": "^1.2.0",
     "cookie-parser": "~1.4.5",
     "debug": "~4.3.1",
